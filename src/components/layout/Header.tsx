@@ -1,24 +1,20 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
-import { SideMode } from "../ui/ModalLateral";
+import { HeaderProps } from "@/types/global";
 
-export const Header = () => {
-    const [open, setOpen] = useState(false);
+export const Header = ({onOpenModal}: HeaderProps) => {
     return(
-        <header className="flex justify-between items-center border w-screen px-10">
-            {/* Botão abre modal */}
+        <header className="flex fixed justify-between items-center border-b w-screen px-10">
             <button
-                onClick={() => setOpen(true)}
-                className="border rounded-md p-1">
-                Abrir modal
-            </button>
+                className="border p-3 rounded-lg cursor-pointer hover:bg-black hover:text-white"
+                onClick={onOpenModal}
+            >Abrir Modal</button>
+            
             <Image
-                src=""
+                src="/public/gojo.jpg"
                 alt="Imagem teste"
-                width={100}
+                width={20}
                 height={20}
-                quality={100}
             />
             <nav className="">
                 <div className="flex gap-3">
@@ -37,8 +33,6 @@ export const Header = () => {
                 <p className="border rounded-md p-1">GitHub</p>
                 <p className="border rounded-md p-1">Linkdim</p>
             </div>
-            {/* Modal */}
-            <SideMode open={open} onClose={() => setOpen(false)}/>
         </header>
     );
 };
