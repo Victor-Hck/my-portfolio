@@ -1,4 +1,4 @@
 export type ModalLateral = {
-    open: boolean;
+    isOpen: boolean;
     onClose: () => void;
 }
