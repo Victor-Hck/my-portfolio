@@ -4,7 +4,7 @@ export const SideModal = ({isOpen, onClose}: ModalLateral) => {
     if (!isOpen) return null;
 
     return(
-        <div className="flex fixed h-full w-100 bg-black">
+        <div className="flex fixed inset-0 z-999 h-full w-95 bg-black">
             <div>
                 <button
                     className="flex justify-end text-white"
