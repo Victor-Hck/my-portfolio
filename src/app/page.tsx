@@ -1,65 +1,72 @@
+"use client";
 import Image from "next/image";
 
-export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+const Home = () => {
+    return(
+        <div className="flex flex-col lg:flex-row justify-center rounded-lg my-5
+            w-full max-w-6xl bg-[#080c1e] transition-all duration-200 hover:-translate-y-1">
+
+            <div className="p-8 font-bold mt-10 max-w-xl">
+                <p className="text-2xl text-blue-500">Hello World 👋</p>
+
+                <h1 className="text-5xl text-white animate-bounce [text-shadow:2px_2px_10px_blue]">
+                    Eu sou o Victor
+                </h1>
+
+                <h2 className="text-3xl text-[#616060] animate-pulse [text-shadow:0_0_10px_green]">
+                    Desenvolvedor Web Front-end
+                </h2>
+
+                <button
+                    onClick={() => {
+                        const link = document.createElement("a");
+                        link.href = "/curriculo.pdf";
+                        link.download = "Curriculo-Victor-Gomes.pdf";
+                        link.click();
+                    }}
+                    className="border rounded-lg mt-4 px-3 py-3 cursor-pointer
+                    font-bold text-white bg-purple-600 transition-all duration-200 hover:-translate-y-1
+                    animate-pulse shadow-[0_0_15px_#a855f7]">
+                    Baixar CV
+                </button>
+
+                <p className="mt-5 text-sm leading-relaxed">
+                    Com 24 anos, sou um profissional entusiasta por tecnologia e com uma paixão genuína por tudo que a envolve.
+                    Possuo uma forte inclinação para o estudo contínuo e dedico-me ativamente à atualização constante dos meus conhecimentos e habilidades. 
+                    Acredito que a tecnologia avança rapidamente, e por isso, mantenho um ritmo de aprendizado ininterrupto para garantir que minhas competências estejam sempre alinhadas com as exigências e inovações do mercado de trabalho.
+                    Minha dedicação em estudar continuamente não é apenas uma obrigação, mas uma motivação intrínseca para me qualificar e contribuir de forma significativa para os desafios e projetos das empresas. 
+                    Estou sempre em busca de novas ferramentas, metodologias e tendências para aplicar na prática e agregar valor.
+                </p>
+
+                <div className="border-l-4 border-white mt-10">
+                    <p className="pl-2 text-sm [text-shadow:1px_1px_11px_white]">
+                        Ser desenvolvedor é uma viagem onde a próxima parada é a solução de um problema.
+                    </p>
+                </div>
+
+                <p className="mt-2 text-sm hover:underline cursor-pointer">
+                    Autor: Thales Valentim
+                </p>
+            </div>
+
+            <div className="flex justify-center relative w-full max-w-[500px] h-[400px] group cursor-pointer mt-40">
+                <Image
+                    src={"/nika-sungod.gif"}
+                    alt="Luffy Gear five - One Piece"
+                    width={420}
+                    height={420}
+                    className="object-contain transition-opacity duration-300 opacity-100 group-hover:opacity-0"
+                />
+                <Image
+                    src={"/luffy-gear5.gif"}
+                    alt="Luffy Gear five - One Piece"
+                    fill
+                    className="object-contain transition-opacity duration-300 opacity-0 group-hover:opacity-100 absolute top-0 left-0"
+                />
+            </div>
+
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
-}
+    );
+};
+
+export default Home;
