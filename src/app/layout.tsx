@@ -1,8 +1,6 @@
 "use client";
-import { useState } from "react";
-import "./globals.css";
 import { Header } from "@/components/layout/Header";
-import { SideModal } from "@/components/ui/ModalLateral";
+import "./globals.css";
 import { Footer } from "@/components/layout/Footer";
 
 export default function RootLayout({
@@ -10,17 +8,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-    const [modalOpen, setModalOpen] = useState(false);
     return (
         <html lang="pt-br">
-            <body className="min-h-screen flex flex-col"
+            <body className="w-scren h-screen flex flex-col"
             >
-                <Header onOpenModal={() => setModalOpen(true)}/>
-                <SideModal
-                    isOpen={modalOpen}
-                    onClose={() => setModalOpen(false)}
-                />
-                <main className="flex flex-1 justify-center">
+                <Header/>
+                <main className="flex-1 flex justify-center items-center mx-5">
                     {children}
                 </main>
                 <Footer/>

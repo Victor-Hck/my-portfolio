@@ -1,26 +1,21 @@
-// tailwind.config.js
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
     content: [
-        "./pages/**/*.{js,ts,jsx,tsx}",
-        "./components/**/*.{js,ts,jsx,tsx}",
+        "./app/**/*.{js,ts,jsx,tsx,mdx}",
+        "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+        "./components/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
         extend: {
-            textShadow: {
-                DEFAULT: "2px 2px 4px rgba(0, 0, 0, 0.5)", // sombra normal
+            colors: {
+                neonPink: "#ff00e6",
+                electricBlue: "#00eaff",
+                vividPurple: "#a300ff",
+                laserCyan: "#2bfffd",
+                cyberYellow: "#f5e736",
+                darkVoid: "#05010a",
+                deepSpace: "#0a0f24",
             },
         },
     },
-    plugins: [
-        function({ addUtilities, theme }) {
-            const shadows = theme("textShadow");
-            const utilities = Object.keys(shadows).map(key => ({
-                [`.text-shadow${key === "DEFAULT" ? "" : `-${key}`}`]: {
-                    textShadow: shadows[key],
-                }
-            }));
-            addUtilities(utilities, ["responsive", "hover"]);
-        }
-    ],
 };

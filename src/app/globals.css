@@ -1,1 +1,22 @@
 @import "tailwindcss";
+
+:root {
+    --bg-main: #05010a;
+    --neon-pink: #ff00e6;
+    --electric-blue: #00eaff;
+}
+
+@theme inline {
+    --color-neonPink: #ff00e6;
+    --color-electricBlue: #00eaff;
+    --color-vividPurple: #a300ff;
+    --color-laserCyan: #2bfffd;
+    --color-cyberYellow: #f5e736;
+    --color-darkVoid: #05010a;
+    --color-deepSpace: #0a0f24;
+}
+
+body {
+    background: var(--bg-main);
+    color: white;
+}
